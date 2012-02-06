@@ -7,14 +7,14 @@
 
 @implementation Restaurant
 
--(float) priceOfDinner
+-(float) priceOfDinnerForGuests: (int)numberOfGuests
 {
     float entreePrice = 22.50;
     float appetizerPrice = 11.00;
     float dessertPrice = 5.50;
     float winePrice = 34.25;
     
-    int numberOfGuests = 4;
+    //int numberOfGuests = 4;
     
     float taxRate = .0875;
     float tipRate = .2;
@@ -60,9 +60,17 @@
 - (id)init {
     self = [super init];
     if (self) {
-        float priceForFamily = [self priceOfDinner];
+        float priceForFamily = [self priceOfDinnerForGuests:4] + 
+        [self priceOfDinnerForGuests:4] + [self priceOfDinnerForGuests:6] + 
+        [self priceOfDinnerForGuests:3] + [self priceOfDinnerForGuests:5] + 
+        [self priceOfDinnerForGuests:10] + [self priceOfDinnerForGuests:8] + 
+        [self priceOfDinnerForGuests:2] + [self priceOfDinnerForGuests:2] + 
+        [self priceOfDinnerForGuests:2];
+        NSLog(@"Dinner for 10 families cost $%.2f", priceForFamily);
+        return priceForFamily;
     }
     return self;
+
 }
 
 @end
