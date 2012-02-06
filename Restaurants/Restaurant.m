@@ -41,7 +41,9 @@
     // Your code goes here
     // *********************
     
-    numberOfAppetizersOrdered = numberOfGuests/2;
+    // ceil rounds up
+    // floor rounds down
+    numberOfAppetizersOrdered = ceil((float)numberOfGuests/2.0);
     numberOfWineBottlesOrdered = numberOfGuests/4;
     
     dinnerPrice = entreePrice*numberOfGuests + dessertPrice*numberOfGuests + numberOfAppetizersOrdered*appetizerPrice + numberOfWineBottlesOrdered*winePrice;
